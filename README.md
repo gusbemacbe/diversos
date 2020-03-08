@@ -7,3 +7,5 @@ Neste repo estão algumas brincadeiras nas horas vagas.
     * [Ao clicar em login o formulário desce até sumir da tela]
     * [Ao clicar em login com os campos em branco o formulário vai tremer]
     * [Algumas formas ficam passando pela tela em diversas direções]
+
+    Qualquer contribuição será bem-vinda, Deixar aqui meus agradecimentos ao trabalho do Mayk Brito, valeu.
