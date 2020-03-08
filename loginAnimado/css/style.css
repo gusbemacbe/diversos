@@ -6,6 +6,7 @@
 }
 body,html{
     height: 100vh;
+    overflow: hidden;
 }
 body{
     background-color: #7159c1;
@@ -31,6 +32,7 @@ form{
     background-color: white;
     padding: 30px 25px;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 form .input-block{
@@ -66,11 +68,31 @@ form .input-block input {
   }
 
 /* Animacoes do frame */
+
 form{
     animation-name: fade;
-    animation-duration: 1s;
+    animation-duration: 300ms;
 
 }
+
+form .input-block:nth-child(1){
+    animation-name: inputs;
+    animation-duration: 500ms;
+}
+form .input-block:nth-child(2){
+    animation-name: inputs;
+    animation-duration: 700ms;
+    animation-delay: 100ms;
+}
+form .btn-login{
+    animation-name: inputs;
+    animation-duration: 1s;
+    animation-delay: 170ms;
+}
+form .input-block, form .btn-login{
+    animation-fill-mode: backwards;
+}
+/* Como o formulario de login deve aparecer*/
 @keyframes fade{
     from{
         opacity: 0;
@@ -79,5 +101,92 @@ form{
     to{
         opacity: 1;
         transform: scale(1);
+    }
+}
+/* Como os campos devem surginr */
+@keyframes inputs{
+    from{
+        opacity: 0;
+        transform: translate(-30%, -50%);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+/* Ao clicar no botao submit o formulário vai sumir */
+.form-hide{
+    animation-name: formHide;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards ;
+}
+@keyframes formHide{
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+
+    }
+    90%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(100vh);
+    }
+}
+
+/* treme o formulario*/
+.validate-error{
+    animation: treme 500ms linear, fade paused;
+    animation-iteration-count: 2;
+    
+   /* animation-duration: 500ms;*/
+
+    
+    
+}
+
+@keyframes treme{
+    0%{
+        transform: translateX(0);
+  
+    }
+    40%{
+        transform: translateX(-20%);
+
+        
+    }
+    80%{
+        transform: translateX(20%);
+
+    }
+    100%{
+        transform: translateX(0);
+
+        
+    }
+}
+
+/* Quadrados */
+.quadrados li{
+    background-color: rgba(230, 230, 230, 0.15);
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    animation: up 2s infinite alternate;
+    z-index:-1
+}
+@keyframes up{
+    from{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    50%{
+        opacity: 1;
+    }
+    to{
+        transform: translateY(-700px) rotate(960deg);
     }
 }
